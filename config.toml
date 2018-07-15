@@ -1,0 +1,15 @@
+baseurl = "https://seddonm1.github.io/"
+title = "reorchestrate"
+author = "Mike Seddon"
+canonifyurls = true
+languagecode = "en"
+theme = "black-and-light"
+
+pygmentsUseClasses = true
+pygmentsStyle = "default"
+pygmentsCodefences = true
+
+[params]
+  sitename = "reorchestrate"
+
+  dateFormat = "2 January 2006"
