@@ -1,4 +1,4 @@
-baseurl = "https://seddonm1.github.io/"
+baseurl = "https://reorchestrate.com/"
 title = "reorchestrate"
 author = "Mike Seddon"
 canonifyurls = true
@@ -13,3 +13,7 @@ pygmentsCodefences = true
   sitename = "reorchestrate"
 
   dateFormat = "2 January 2006"
+
+[[params.social]]
+  url = "https://github.com/seddonm1"
+  fa_icon = "fa-github"  
