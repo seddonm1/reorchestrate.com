@@ -7,7 +7,7 @@ tags: ["development", "spark"]
 
 ## History of the problem
 
-Since Hadoop was released in 2007 users have been struggling to use it to deploy reliable and scalable Extract-Transform-Load (ETL) data pipelines. This was exacerbated in the early days by the ecosystem still being in flux - it felt like every day there was another major Apache Foundation project being announced adding to the Hadoop ecosystem. Now, with the convergence of; adoption of cloud infrastructure, much more powerful hardware/faster networking and maturity of open-source solutions like Apache Spark it should be easier than ever to build ETL pipelines - but organisations are still grappling with how to rapidly deliver reliable and scalable ETL pipelines. 
+Since Hadoop was released in 2007 users have been struggling to use it to deploy reliable and scalable Extract-Transform-Load (ETL) data pipelines. This was exacerbated in the early days by the ecosystem still being in flux - it felt like every day there was another major Apache Foundation project being announced adding to the Hadoop ecosystem. Now with the convergence of the adoption of cloud infrastructure, much more powerful hardware/faster networking and maturity of open-source solutions like Apache Spark it should be easier than ever to build ETL pipelines - but organisations are still grappling with how to rapidly deliver reliable and scalable ETL pipelines. 
 
 ## Just do Code?
 
@@ -40,6 +40,8 @@ Standardising ETL component makes data engineering accessible to audiences outsi
 ### Less Technical Debt
 
 Every line of code, no matter how fundamental to your business, is technical debt in there is a cost to maintain and test and carries a cognitive cost to understand its purpose. By abstracting the problem to a series of components with documented interfaces it is easy to re-implement just the desired behaviour against future execution engines and leave the configuration - which describes the **intent** of the pipeline - unchanged.
+
+Every line of code, no matter how fundamental to your business, is technical debt: there is a cost to maintain, test and carries a cognitive cost to understand its purpose.
 
 ### Time to Market
 
