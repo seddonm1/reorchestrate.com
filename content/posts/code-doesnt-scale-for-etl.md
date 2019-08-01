@@ -21,7 +21,7 @@ A bespoke engineered solution to a problem should always outperform a generalise
 
 ### Repeatly solving the same problem
 
-Extract-Transform-Load is a very well understood problem given that it has been around that we have a good understanding of the patterns (or components) that are typically required. In other software engineering diciplines we have seen users rally around opinionated frameworks such as [Ruby on Rails](https://rubyonrails.org/) and [React](https://reactjs.org/) in the web space and things like [Terraform](https://www.terraform.io) for devops which provide standard patterns and predictable behaviour without 'reinventing the wheel' each time. With ETL we see people continuously re-implementing the same logic differently which slows time-to-market, increases the surface-area of code and decreases the testing coverage.
+Extract-Transform-Load has been around for so long that we have a good understanding of the patterns (or components) that are typically required. In other software engineering diciplines we have seen users rally around opinionated frameworks such as [Ruby on Rails](https://rubyonrails.org/) and [React](https://reactjs.org/) in the web space and things like [Terraform](https://www.terraform.io) for devops which provide standard patterns and predictable behaviour without 'reinventing the wheel' each time. With ETL we see people continuously re-implementing the same logic differently which slows time-to-market, increases the surface-area of code and decreases the testing coverage.
 
 ### Writing how to get what they want, not what they want
 
