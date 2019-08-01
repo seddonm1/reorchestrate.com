@@ -39,9 +39,7 @@ Standardising ETL component makes data engineering accessible to audiences outsi
 
 ### Less Technical Debt
 
-Every line of code, no matter how fundamental to your business, is technical debt in there is a cost to maintain and test and carries a cognitive cost to understand its purpose. By abstracting the problem to a series of components with documented interfaces it is easy to re-implement just the desired behaviour against future execution engines and leave the configuration - which describes the **intent** of the pipeline - unchanged.
-
-Every line of code, no matter how fundamental to your business, is technical debt: there is a cost to maintain, test and carries a cognitive cost to understand its purpose.
+Every line of code, no matter how fundamental to your business, is technical debt: there is a cost to maintain, test and carries a cognitive cost to understand its purpose. By abstracting the problem to a series of components with documented interfaces it is easy to re-implement just the desired behaviour against future execution engines and leave the configuration - which describes the **intent** of the pipeline - unchanged.
 
 ### Time to Market
 
