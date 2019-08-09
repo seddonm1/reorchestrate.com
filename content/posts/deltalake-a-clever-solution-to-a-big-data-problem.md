@@ -70,12 +70,26 @@ Running on `2019-08-04` produces the first version `00000000000000000000.json`.
 {"add":{"path":"part-00000-c5bc4211-f1e5-447b-b6a6-2b06ac214421-c000.snappy.parquet","partitionValues":{},"size":2642,"modificationTime":1565327755000,"dataChange":true}}
 ```
 
+The `part-00000-c5bc4211-f1e5-447b-b6a6-2b06ac214421-c000.snappy.parquet` would contain only:
+
+| date     | amount    | description    |
+|----------|-----------|----------------|
+|2019-08-04|    500.00 | Pay            |
+|2019-08-04|    -21.60 | Uber Eats      |
+
 Running on `2019-08-05` with `saveMode=Append` results in `00000000000000000001.json`.
 
 ```json
 {"commitInfo":{"timestamp":1565327830447,"operation":"WRITE","operationParameters":{"mode":"Append","partitionBy":"[]"},"readVersion":0,"isBlindAppend":true}}
 {"add":{"path":"part-00000-a173a6c3-09f5-443c-a378-b3270b2846da-c000.snappy.parquet","partitionValues":{},"size":2670,"modificationTime":1565327830000,"dataChange":true}}
 ```
+
+The `part-00000-a173a6c3-09f5-443c-a378-b3270b2846da-c000.snappy.parquet` would contain only:
+
+| date     | amount    | description    |
+|----------|-----------|----------------|
+|2019-08-05|    -55.29 | Uber Eats      |
+|2019-08-05|    -10.00 | Movie Ticket   |
 
 The important bit to focus on is the `add` operation which tells `DeltaLake` to `add` the data contained in `part-00000-a173a6c3-09f5-443c-a378-b3270b2846da-c000.snappy.parquet` to the previous version (`0`) which contains only `part-00000-c5bc4211-f1e5-447b-b6a6-2b06ac214421-c000.snappy.parquet`. On every 10th write `DeltaLake` will automatically capture a state snapshot so the maximum number of `versions` which need to be applied to the last known snapshot are limited.
 
