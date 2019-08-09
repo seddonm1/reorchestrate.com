@@ -1,5 +1,5 @@
 ---
-title: "DeltaLake: A solution to blob-storage data warehousing"
+title: "DeltaLake: A clever solution to a big (data) problem"
 date: 2019-08-09
 draft: false
 tags: ["development", "spark"]
