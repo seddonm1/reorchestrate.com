@@ -7,7 +7,7 @@ tags: ["development", "spark"]
 
 ## Why Blob Storage Is Risky
 
-Many people use [Amazon S3](https://aws.amazon.com/s3/) or equivalent services to replace their relational database data warehouses as blob storage coupled with technologies like the compressed-columnar [parquet](https://parquet.apache.org/) file format offsers a reasonably perfomant, hugely scalable and cheap alternative.
+Many people use [Amazon S3](https://aws.amazon.com/s3/) or equivalent services to replace their relational database data warehouses as blob storage coupled with technologies like the compressed-columnar [parquet](https://parquet.apache.org/) file format offers a reasonably performant, massively scalable and cheap alternative.
 
 To understand why blob storage can be risky it is important to understand how Apache Spark executes writes to non-transactional storage systems like S3 or other blob storage. To do this we are going use a contrived example where every day a user extracts their bank account transactions to a CSV file named `yyyy-MM-dd_transactions.csv`:
 
@@ -32,7 +32,7 @@ The actual process happens in two steps:
 This is actually very risky due to the non-[ACID](https://en.wikipedia.org/wiki/ACID) properties of S3 (and other blob storage systems) as:
 
 1. The `mv` move process is executed by the `Driver` process is not [Atomic](https://en.wikipedia.org/wiki/ACID#Atomicity) (offers no `transactional` guarantees) meaning that if the network connection is broken or the `Driver` process crashes partway through the list of files to move then the target path will contain a non-consistent dataset (only a subset of the data will have been moved). Contrast this to a traditional data warehouse with `transacitonal` guarantees the database not commit the data if the connection was severed before a transaction `COMMIT` has occured.
-1. While the `mv` (move) stage is occuring a consumer may read the data and receive a dataset with a non-consistent state as s3 does not provide [Isolation](https://en.wikipedia.org/wiki/ACID#Atomicity).
+1. While the `mv` (move) stage is occuring a consumer may read the data and receive a dataset with a non-consistent state as s3 does not provide read-[Isolation](https://en.wikipedia.org/wiki/ACID#Atomicity).
 1. The `mv` (move) process is executed by the `Driver` process sequentially so it is an `O(n)` problem, meaning it will take longer and longer depending on the number of files to move, increasing the risk of the previous `non-consistent` dataset issues.
 
 ## Solutions
